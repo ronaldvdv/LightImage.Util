@@ -12,7 +12,7 @@
     <NeutralLanguage>English</NeutralLanguage>
     <Copyright>(c) 2020 Light Image</Copyright>
     <Version>1.0.5-alpha</Version>
-    <PackageIcon>..\logo.png</PackageIcon>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
