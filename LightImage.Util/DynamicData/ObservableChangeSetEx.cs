@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Reactive;
 using System.Reactive.Linq;
 
-namespace LightImage.Grph.Util.Collections
+namespace DynamicData
 {
     public static partial class ObservableChangeSetEx
     {

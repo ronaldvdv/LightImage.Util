@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 
-namespace LightImage.Grph.Util.Collections
+namespace DynamicData
 {
     internal class ToZeroOneChangeSet<T>
     {
