@@ -14,19 +14,31 @@ namespace DynamicData
 {
     public static partial class ObservableChangeSetEx
     {
-        public static void EditDiffOrdered<T>(this IExtendedList<T> list, IEnumerable<T> items)
+        public static void EditDiffOrdered<T>(this IExtendedList<T> list, IEnumerable<T> items, bool fullReplace = false)
         {
             if (list.SequenceEqual(items))
             {
                 return;
             }
-            list.Clear();
-            list.AddRange(items);
+
+            if (fullReplace)
+            {
+                list.Clear();
+                list.AddRange(items);
+            }
+            else
+            {
+                var add = items.Except(list).ToArray();
+                var remove = list.Except(items).ToArray();
+
+                list.AddRange(add);
+                list.RemoveMany(remove);
+            }
         }
 
-        public static void EditDiffOrdered<T>(this ISourceList<T> list, IEnumerable<T> items)
+        public static void EditDiffOrdered<T>(this ISourceList<T> list, IEnumerable<T> items, bool fullReplace = false)
         {
-            list.Edit(ext => ext.EditDiffOrdered(items));
+            list.Edit(ext => ext.EditDiffOrdered(items, fullReplace));
         }
 
         public static IObservable<IChangeSet<T>> SortBy<T, U>(this IObservable<IChangeSet<T>> source, Expression<Func<T, U>> property, IComparer<U> comparer = null)
