@@ -80,10 +80,10 @@ namespace DynamicData
             });
         }
 
-        public static IObservable<TResult> WatchProperty<TSource, TResult>(this IObservable<TSource> source, Expression<Func<TSource, TResult>> expr)
+        public static IObservable<TResult> WatchProperty<TSource, TResult>(this IObservable<TSource> source, Expression<Func<TSource, TResult>> expr, TResult defaultResult = default)
                     where TSource : INotifyPropertyChanged
         {
-            return source.Select(item => item != null ? item.WhenValueChanged(expr) : Observable.Return<TResult>(default)).Switch().DistinctUntilChanged();
+            return source.Select(item => item != null ? item.WhenValueChanged(expr) : Observable.Return(defaultResult)).Switch().DistinctUntilChanged();
         }
     }
 }

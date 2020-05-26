@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/ronaldvdv/LightImage.Util</RepositoryUrl>
     <NeutralLanguage>English</NeutralLanguage>
     <Copyright>(c) 2020 Light Image</Copyright>
-    <Version>1.0.7-alpha</Version>
+    <Version>1.2-alpha</Version>
     <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
