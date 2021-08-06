@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DynamicData\**" />
+    <EmbeddedResource Remove="DynamicData\**" />
+    <None Remove="DynamicData\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="coverlet.collector" Version="3.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -28,10 +34,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     <PackageReference Include="Polly" Version="7.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DynamicData\" />
   </ItemGroup>
 
   <ItemGroup>
